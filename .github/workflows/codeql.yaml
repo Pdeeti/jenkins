@@ -6,10 +6,6 @@ on:
     paths:
       - '**/*.java' # Only trigger the workflow if Java files have changed
       - 'runzzit' # some file to trigger the workflow
-  pull_request:
-    branches: [ "master" ]
-    paths:
-      - '**/*.java'
 
 jobs:
   analyze:
@@ -26,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           # provide tag here
-          ref: refs/tags/1.513
+          ref: refs/tags/jenkins-1.513
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
