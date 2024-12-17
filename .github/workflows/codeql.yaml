@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix: 
-        language: ['java'] 
+        language: ['java', 'javascript'] 
 
     steps:
       - name: Checkout repository
@@ -32,7 +32,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: 'java'
+          languages: ${{ matrix.language }}
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
