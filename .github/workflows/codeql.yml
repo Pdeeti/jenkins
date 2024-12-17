@@ -65,7 +65,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: refs/tags/jenkins-1.513
+        # ref: refs/tags/jenkins-1.513
+        fetch-depth: 0
+    - run: git checkout 5d57c85
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
